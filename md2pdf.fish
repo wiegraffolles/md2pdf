@@ -3,8 +3,6 @@ function md2pdf
 	function location
 		set directory (dirname $argv[2])
 		set markdown (basename $argv[2])
-		echo $directory
-		echo $markdown
 		cd $directory
 		sudo docker run -v (pwd):/source jagregory/pandoc --latex-engine=xelatex $markdown -o $argv[3]
 	end
