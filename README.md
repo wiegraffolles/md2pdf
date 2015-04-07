@@ -7,10 +7,6 @@ A markdown to PDF conversion Fish script for use with the [jagregory/pandoc](htt
 
 It is also possible to run the conversion in another directory by using the `-l` or `--location` flag:
 
-`md2pdf -l /foo/bar/ foo.md bar.pdf`
+`md2pdf -l /foo/bar/foo.md bar.pdf`
 
-This functionality is quite limited by the constraints of the container though, as giving absolute paths for the files:
-
-`md2pdf -l /foo/bar/ /foo/bar/foo.md /foo/bar/bar.pdf`
-
-Will **not** work, and will cause the conversion to be aborted. **Therefore the use of the `-l` option is not recommended except in unusual cases.**
+The PDF argument cannot be an absolute path, as the output must be local to the same directory as the markdown file.
